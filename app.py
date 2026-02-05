@@ -32,3 +32,8 @@ def first_push():
     response = requests.post("https://onesignal.com/api/v1/notifications", json=payload, headers=headers)
     print("OneSignal response:", response.text)
     return jsonify({"status": "ok"})
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render sets the PORT environment variable
+    app.run(host="0.0.0.0", port=port)
+
